@@ -18,16 +18,16 @@ class CreateQuestion(generics.ListCreateAPIView):
     serializer_class = QuestionSerializer
     permission_classes = [AllowAny]
 
-    def perform_create(self, serializer, request):
-        if serializer.is_valid():
-            question = request.POST.get("#question")
-            context = get_context(question)
-            prompt = create_prompt(context, question)
-            response = get_response(prompt)
+    #def perform_create(self, serializer, request):
+    #    if serializer.is_valid():
+    #        question = request.POST.get("#question")
+    #        context = get_context(question)
+    #        prompt = create_prompt(context, question)
+    #        response = get_response(prompt)
 
-            serializer.save(answer=response)
-        else:
-            print(serializer.errors)
+    #        serializer.save(answer=response)
+    #    else:
+    #        print(serializer.errors)
 
     #def get_querset(self):
 
