@@ -12,36 +12,18 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.agents.openai_assistant import OpenAIAssistantRunnable
 from typing_extensions import override
 from openai import AssistantEventHandler
-from dataclasses import dataclass
+from dataclasses import dataclass 
 import os
+import time 
 import warnings
 warnings.filterwarnings('ignore')
 
 CHROMA_PATH = r"D:\personal_website\backend\chroma"
 DATA_PATH = r"D:\personal_website\backend\data"
 
-class EventHandler(AssistantEventHandler):    
-    @override
-    def on_text_created(self, text) -> None:
-        print(f"\nassistant > ", end="", flush=True)
-      
-    @override
-    def on_text_delta(self, delta, snapshot):
-        print(delta.value, end="", flush=True)
-      
-    def on_tool_call_created(self, tool_call):
-        print(f"\nassistant > {tool_call.type}\n", flush=True)
-  
-    def on_tool_call_delta(self, delta, snapshot):
-        if delta.type == 'code_interpreter':
-            if delta.code_interpreter.input:
-                print(delta.code_interpreter.input, end="", flush=True)
-            if delta.code_interpreter.outputs:
-                print(f"\n\noutput >", flush=True)
-            for output in delta.code_interpreter.outputs:
-                if output.type == "logs":
-                    print(f"\n{output.logs}", flush=True)
-
+client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+assistant_id = os.environ['ASSISSTANT_ID']
+assistant = client.beta.assistants.retrieve(assistant_id)
 
 def get_context(question):
     # Prepare the DB.
@@ -87,26 +69,54 @@ def create_prompt(context, question):
     
     return prompt
 
-
-def get_response(prompt):
-    client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
-    assistant_id = os.environ['ASSISSTANT_ID']
-    assistant = client.beta.assistants.retrieve(assistant_id)
-
+# create new thread when user opens page for the first time, or if page refreshed
+def create_thread(client):
     thread = client.beta.threads.create()
+    return thread
+
+
+def get_response(prompt, client, assistant, thread):
+    #client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+    #assistant_id = os.environ['ASSISSTANT_ID']
+    #assistant = client.beta.assistants.retrieve(assistant_id)
+    #thread = client.beta.threads.create()
 
     message = client.beta.threads.messages.create(
-    thread_id=thread.id,
-    role="user",
-    content=prompt
+        thread_id=thread.id,
+        role="user",
+        content=prompt
     )
 
-    with client.beta.threads.runs.stream(
-    thread_id=thread.id,
-    assistant_id=assistant.id,
-    event_handler=EventHandler(),
-    ) as stream:
-        return stream.until_done()
+    run = client.beta.threads.runs.create(
+        thread_id=thread.id,
+        assistant_id=assistant.id,
+    )
+
+    run_status = client.beta.threads.runs.retrieve(
+        thread_id = thread.id,
+        run_id = run.id
+    )
+
+    while run_status.status not in ["completed", "failed", "requires_action"]:
+        run_status = client.beta.threads.runs.retrieve(
+            thread_id = thread.id,
+            run_id = run_status.id)
+        
+        time.sleep(5)
+
+
+    messages = client.beta.threads.messages.list(
+        thread_id = thread.id)
+    
+    out = []
+    for msg in messages:
+        if msg.role == "assistant":
+            out.append(msg.content[0].text.value)
+    
+    return out
+
+
+
     
 
 
