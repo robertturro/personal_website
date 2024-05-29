@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import "../styles/homepage.css";
-import MyImage from "../styles/github_pic.PNG";
+import myImage from "../styles/github_pic.jpg";
 
 function Home() {
   const [response, setResponse] = useState([]);
@@ -40,13 +40,16 @@ function Home() {
           Full-Stack Developer with Strong Machine Learning and Data Science
           Skills
         </h1>
-        <img
-          src={MyImage}
-          alt="My Image"
-          width="500"
-          height="600"
-          color="black"
-        ></img>
+      </div>
+      <div className="row">
+        <div className="column">
+          <img src={myImage} alt="My Image" className="picture"></img>
+        </div>
+        <div className="column">
+          <p className="link">Github</p>
+          <p className="link">LinkedIn</p>
+          <p className="link">Kaggle</p>
+        </div>
       </div>
     </div>
   );
