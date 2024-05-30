@@ -41,16 +41,38 @@ function Home() {
           Skills
         </h1>
       </div>
-      <div className="row">
-        <div className="column">
-          <img src={myImage} alt="My Image" className="picture"></img>
+      <body>
+        <div className="row">
+          <div className="column">
+            <img src={myImage} alt="My Image" className="picture"></img>
+          </div>
+          <div>
+            <div class="card">
+              <div class="container">
+                <h4>
+                  <b>Github</b>
+                </h4>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="container">
+                <h4>
+                  <b>LinkedIn</b>
+                </h4>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="container">
+                <h4>
+                  <b>Kaggle</b>
+                </h4>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="column">
-          <p className="link">Github</p>
-          <p className="link">LinkedIn</p>
-          <p className="link">Kaggle</p>
-        </div>
-      </div>
+      </body>
     </div>
   );
 }

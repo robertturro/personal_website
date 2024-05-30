@@ -15,13 +15,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.picture {
-  display: block;
-  margin-left: 250px;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 50%;
-  border-radius: 40%;
+.body {
+  min-width: 1px;
+  max-width: 1365px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .row {
@@ -32,11 +29,35 @@
   flex: 50%;
 }
 
-.link {
+.picture {
+  width: 50%;
+  height: auto;
+  border-radius: 40%;
   display: block;
-  margin-left: 250px;
-  margin-right: 500px;
-  margin-top: 50px;
-  border: 15px solid green;
-  padding: 50px;
+  margin-left: auto;
+  margin-right: 80%;
+}
+
+.card {
+  /*top: 1em; */
+  padding: 25px;
+  border-radius: 1em;
+
+  margin-right: 200px;
+  margin-left: auto;
+  margin-top: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 100px;
+  padding-top: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
