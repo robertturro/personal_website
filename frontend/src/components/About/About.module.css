@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 49px;
+  padding-bottom: 30px;
   z-index: 1;
   margin-left: 10%;
   margin-right: 10%;
@@ -41,11 +42,95 @@
 
 .chatbotImg {
   width: 15%;
+  max-width: 100px;
   border-radius: 50%;
-  align-items: center;
+  margin: auto;
+  display: block;
+  padding-bottom: 5px;
 }
 
-.textbox {
-  height: 500px;
-  width: 100%;
+/* Modern Text Area Styling */
+.question {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Max width to control the size */
+  height: 150px; /* Fixed height */
+  padding: 15px; /* Padding inside the text area */
+  font-size: 16px; /* Font size */
+  line-height: 1.5; /* Line height */
+  color: #ffffff; /* Text color */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(240, 240, 240, 0.3)
+  ); /* Gradient background */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: auto;
+  display: block;
+  resize: none;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.question:focus {
+  border-color: #66afe9; /* Border color on focus */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.askBtn {
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border-radius: 100px;
+  border-width: 0px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 17px 26px;
+
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  margin: auto;
+  display: block;
+}
+
+.response {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Max width to control the size */
+  height: 150px; /* Fixed height */
+  padding: 15px; /* Padding inside the text area */
+  font-size: 16px; /* Font size */
+  line-height: 1.5; /* Line height */
+  color: #ffffff; /* Text color */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(240, 240, 240, 0.3)
+  ); /* Gradient background */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  display: block;
+  resize: none;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.response:focus {
+  border-color: #66afe9; /* Border color on focus */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+@media screen and (max-width: 830px) {
+  .aboutcontainer {
+    flex-direction: column-reverse;
+  }
+
+  .aboutcontent {
+    align-items: center;
+  }
 }

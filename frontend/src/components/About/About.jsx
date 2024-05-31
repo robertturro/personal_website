@@ -9,7 +9,13 @@ export const About = () => {
       <p className={style.aboutdescription}>
         Please feel free to ask my AI Assisstant, ROB-BOT, any questions you
         might have about me!
+        <br></br>
+        <br></br>
+        You can ask anything either about me personally such as: "Where is
+        Robert from?" or "Where did Robert go to College?". Or you can ask about
+        any projects I have done or what skills do I have.
       </p>
+
       <div className={style.aboutcontent}>
         <img
           className={style.chatbotImg}
@@ -17,7 +23,26 @@ export const About = () => {
           alt="Image"
         ></img>
       </div>
-      <input className={style.textbox} type="text"></input>
+
+      <form>
+        <div>
+          <textarea
+            className={style.question}
+            placeholder="Ex: Tell me about Robert."
+          ></textarea>
+        </div>
+        <button type="submit" className={style.askBtn}>
+          Ask ROB-BOT
+        </button>
+      </form>
+
+      <div>
+        <textarea
+          className={style.response}
+          readOnly
+          placeholder="ROB-BOT's response will be displayed here."
+        ></textarea>
+      </div>
     </section>
   );
 };
