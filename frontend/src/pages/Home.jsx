@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import api from "../api";
-import "../styles/homepage.css";
-import myImage from "../styles/github_pic.jpg";
+import styles from "../home.module.css";
+import "../index.css";
+import { Navbar } from "../components/Navbar/Navbar";
+import { Overview } from "../components/Overview/Overview";
+import { About } from "../components/About/About";
 
 function Home() {
   const [response, setResponse] = useState([]);
@@ -33,46 +36,10 @@ function Home() {
   };
 
   return (
-    <div>
-      <div>
-        <h2 className="header">Robert Turro</h2>
-        <h1 className="subtitle">
-          Full-Stack Developer with Strong Machine Learning and Data Science
-          Skills
-        </h1>
-      </div>
-      <body>
-        <div className="row">
-          <div className="column">
-            <img src={myImage} alt="My Image" className="picture"></img>
-          </div>
-          <div>
-            <div class="card">
-              <div class="container">
-                <h4>
-                  <b>Github</b>
-                </h4>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="container">
-                <h4>
-                  <b>LinkedIn</b>
-                </h4>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="container">
-                <h4>
-                  <b>Kaggle</b>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </body>
+    <div className={styles.home}>
+      <Navbar></Navbar>
+      <Overview></Overview>
+      <About></About>
     </div>
   );
 }

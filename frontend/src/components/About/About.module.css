@@ -1,0 +1,51 @@
+@import "../../vars.css";
+
+.aboutcontainer {
+  position: relative;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  margin-top: 49px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.abouttitle {
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 120%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.aboutcontent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-text);
+  z-index: 1;
+}
+
+.aboutdescription {
+  font-size: 20px;
+  font-family: var(--font-roboto);
+  color: var(--color-text);
+  margin-bottom: 52px;
+}
+
+.chatbotImg {
+  width: 15%;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.textbox {
+  height: 500px;
+  width: 100%;
+}
