@@ -9,6 +9,6 @@ class Question(models.Model):
 
 class LinkClick(models.Model):
     link_clicked = models.CharField(max_length=100)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True) 
 
 

@@ -7,12 +7,14 @@ import { Overview } from "../components/Overview/Overview";
 import { About } from "../components/About/About";
 
 function Home() {
-  const [response, setResponse] = useState([]);
+  const [response, setResponse] = useState(
+    "ROB-BOT's response will be displayed here."
+  );
+  const [question, setQuestion] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     getResponse();
   }, []);
-
   const getResponse = () => {
     api
       .get("/api/chat/")
@@ -20,6 +22,19 @@ function Home() {
       .then((data) => {
         setResponse(data);
         console.log(data);
+      })
+      .catch((err) => alert(err));
+  };*/
+
+  const sendQuestion = (e) => {
+    e.preventDefault();
+    setResponse("");
+    api
+      .post("/api/chat/", { question })
+      .then((res) => res.data)
+      .then((data) => {
+        setResponse(data.response);
+        console.log(data.response);
       })
       .catch((err) => alert(err));
   };
@@ -39,7 +54,11 @@ function Home() {
     <div className={styles.home}>
       <Navbar></Navbar>
       <Overview></Overview>
-      <About></About>
+      <About
+        sendQuestion={sendQuestion}
+        setQuestion={setQuestion}
+        response={response}
+      ></About>
     </div>
   );
 }

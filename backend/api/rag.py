@@ -70,16 +70,19 @@ def create_prompt(context, question):
     return prompt
 
 # create new thread when user opens page for the first time, or if page refreshed
-def create_thread(client):
+def create_thread():
+    global client
     thread = client.beta.threads.create()
     return thread
 
 
-def get_response(prompt, client, assistant, thread):
+def get_response(prompt, thread):
     #client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
     #assistant_id = os.environ['ASSISSTANT_ID']
     #assistant = client.beta.assistants.retrieve(assistant_id)
     #thread = client.beta.threads.create()
+    global client
+    global assistant
 
     message = client.beta.threads.messages.create(
         thread_id=thread.id,
@@ -113,7 +116,7 @@ def get_response(prompt, client, assistant, thread):
         if msg.role == "assistant":
             out.append(msg.content[0].text.value)
     
-    return out
+    return "\n".join(out)
 
 
 

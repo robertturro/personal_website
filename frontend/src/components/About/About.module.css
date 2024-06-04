@@ -2,7 +2,7 @@
 
 .aboutcontainer {
   position: relative;
-  /*display: flex;*/
+  /*display: flex; */
   align-items: center;
   justify-content: center;
   margin-top: 49px;
@@ -94,10 +94,19 @@
   display: block;
 }
 
+.askBtn:hover {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Add a glowing effect on hover */
+}
+
+.askBtn:active {
+  transform: translateY(2px);
+  color: gray;
+}
+
 .response {
   width: 100%; /* Full width */
   max-width: 600px; /* Max width to control the size */
-  height: 150px; /* Fixed height */
+  height: 350px; /* Fixed height */
   padding: 15px; /* Padding inside the text area */
   font-size: 16px; /* Font size */
   line-height: 1.5; /* Line height */
@@ -127,7 +136,7 @@
 
 @media screen and (max-width: 830px) {
   .aboutcontainer {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .aboutcontent {

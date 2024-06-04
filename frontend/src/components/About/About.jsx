@@ -2,7 +2,7 @@ import React from "react";
 import { getImageUrl } from "../../utils";
 import style from "./About.module.css";
 
-export const About = () => {
+export const About = ({ sendQuestion, setQuestion, response }) => {
   return (
     <section className={style.aboutcontainer}>
       <h2 className={style.abouttitle}>About Me</h2>
@@ -24,11 +24,12 @@ export const About = () => {
         ></img>
       </div>
 
-      <form>
+      <form onSubmit={sendQuestion}>
         <div>
           <textarea
             className={style.question}
             placeholder="Ex: Tell me about Robert."
+            onChange={(e) => setQuestion(e.target.value)}
           ></textarea>
         </div>
         <button type="submit" className={style.askBtn}>
@@ -40,7 +41,7 @@ export const About = () => {
         <textarea
           className={style.response}
           readOnly
-          placeholder="ROB-BOT's response will be displayed here."
+          value={response}
         ></textarea>
       </div>
     </section>
