@@ -44,6 +44,7 @@ def get_context(question):
                             Robert was excited to move to a new place, however it was also a scary leap of faith. He only knew one person in Charlotte and would be leaving behind many friends and family in New Jersey. Robert, however, took this challenge head on. Upon arriving in Charlotte he immediately began joining intramural sports leagues and quickly began networking and making friends. Charlotte quickly became home for him and he claims that moving to Charlotte was one of the best decisions of his life.
                             Since graduating college, Robert has never stopped learning and improving his machine learning and programming skills. Everyday after he gets home from work, Robert usually spends a few hours either practicing fundamental data structures and algorithms concepts, competing in Kaggle competitions, or developing full stack websites. Some projects that Robert has built include a movie recommendation program, which is a website where a user enters a movie and the release year and gets recommended another movie, and a recipe recommender which allows a user to search for ingredients or types of food and get recommended new recipes in a personalized dashboard. In addition to these full stack projects, Robert has also placed high in numerous Kaggle competitions allowing him to be given the rank of "Kaggle Expert" by Kaggle.com. 
                             From February 2024 to April 2024 TIAA also hosted an internal machine learning competition, open to all associates throughout the company. Robert was one of 200 employees who signed up for this competition and was put on a random team with 5 other TIAA employees he had never met before. The problem statement was to create a model that can read in the raw text of new regulations and be able to predict if the regulation is applicable to TIAA or not. Models were judged based off of F1 score and the team that had the best F1 score would win. Robert took the lead from the model development perspective and helped his team develop a voting ensemble model which consisted of numerous CatBoost Classifiers and Deberta Models, and the model that Robert created ended up having the best F1 score and winning the competition.
+                            Robert knows the following programming languages: Python, Javascript, HTML, CSS, and has past experience in Java. Robert graduated Rutgers in 2022 and began working at TIAA full time in 2022 and also moved to Charlotte in 2022.
                             Robert is a very hard working and driven person with an undeniable passion for machine learning and programming."""
     
     else:
@@ -65,7 +66,7 @@ def create_prompt(context, question):
     """
 
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-    prompt = prompt_template.format(context=context, question=question)
+    prompt = prompt_template.format(context=context, question=question) 
     
     return prompt
 
@@ -77,10 +78,6 @@ def create_thread():
 
 
 def get_response(prompt, thread):
-    #client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
-    #assistant_id = os.environ['ASSISSTANT_ID']
-    #assistant = client.beta.assistants.retrieve(assistant_id)
-    #thread = client.beta.threads.create()
     global client
     global assistant
 
@@ -104,8 +101,6 @@ def get_response(prompt, thread):
         run_status = client.beta.threads.runs.retrieve(
             thread_id = thread.id,
             run_id = run_status.id)
-        
-        time.sleep(5)
 
 
     messages = client.beta.threads.messages.list(

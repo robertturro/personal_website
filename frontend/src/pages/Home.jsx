@@ -11,6 +11,7 @@ function Home() {
     "ROB-BOT's response will be displayed here."
   );
   const [question, setQuestion] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   /*useEffect(() => {
     getResponse();
@@ -29,14 +30,23 @@ function Home() {
   const sendQuestion = (e) => {
     e.preventDefault();
     setResponse("");
+    setIsLoading(true);
     api
       .post("/api/chat/", { question })
       .then((res) => res.data)
       .then((data) => {
         setResponse(data.response);
+        setIsLoading(false);
         console.log(data.response);
       })
       .catch((err) => alert(err));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendQuestion(e);
+    }
   };
 
   const addLink = (e) => {
@@ -58,6 +68,8 @@ function Home() {
         sendQuestion={sendQuestion}
         setQuestion={setQuestion}
         response={response}
+        handleKeyDown={handleKeyDown}
+        isLoading={isLoading}
       ></About>
     </div>
   );

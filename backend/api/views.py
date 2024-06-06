@@ -21,7 +21,7 @@ class CreateQuestion(generics.ListCreateAPIView):
     serializer_class = QuestionSerializer
     permission_classes = [AllowAny]
 
-    def post(self, request):
+    def post(self, request): 
         data = json.loads(request.body)
         question = data.get('question')
 

@@ -2,7 +2,13 @@ import React from "react";
 import { getImageUrl } from "../../utils";
 import style from "./About.module.css";
 
-export const About = ({ sendQuestion, setQuestion, response }) => {
+export const About = ({
+  sendQuestion,
+  setQuestion,
+  response,
+  handleKeyDown,
+  isLoading,
+}) => {
   return (
     <section className={style.aboutcontainer}>
       <h2 className={style.abouttitle}>About Me</h2>
@@ -24,18 +30,23 @@ export const About = ({ sendQuestion, setQuestion, response }) => {
         ></img>
       </div>
 
-      <form onSubmit={sendQuestion}>
-        <div>
-          <textarea
-            className={style.question}
-            placeholder="Ex: Tell me about Robert."
-            onChange={(e) => setQuestion(e.target.value)}
-          ></textarea>
-        </div>
-        <button type="submit" className={style.askBtn}>
-          Ask ROB-BOT
-        </button>
-      </form>
+      <div className={isLoading ? style.loading_overlay : ""}>
+        {isLoading && <div className={style.spinner}></div>}
+        <form onSubmit={sendQuestion}>
+          <div>
+            <textarea
+              className={style.question}
+              placeholder="Ex: Tell me about Robert."
+              onChange={(e) => setQuestion(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={isLoading}
+            ></textarea>
+          </div>
+          <button type="submit" className={style.askBtn} disabled={isLoading}>
+            Ask ROB-BOT
+          </button>
+        </form>
+      </div>
 
       <div>
         <textarea
