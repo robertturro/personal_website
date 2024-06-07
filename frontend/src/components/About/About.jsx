@@ -10,7 +10,7 @@ export const About = ({
   isLoading,
 }) => {
   return (
-    <section className={style.aboutcontainer}>
+    <section className={style.aboutcontainer} id="about">
       <h2 className={style.abouttitle}>About Me</h2>
       <p className={style.aboutdescription}>
         Please feel free to ask my AI Assisstant, ROB-BOT, any questions you

@@ -5,6 +5,7 @@ import "../index.css";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Overview } from "../components/Overview/Overview";
 import { About } from "../components/About/About";
+import { Experience } from "../components/Experience/Experience";
 
 function Home() {
   const [response, setResponse] = useState(
@@ -71,6 +72,7 @@ function Home() {
         handleKeyDown={handleKeyDown}
         isLoading={isLoading}
       ></About>
+      <Experience></Experience>
     </div>
   );
 }

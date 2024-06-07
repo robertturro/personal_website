@@ -1,0 +1,21 @@
+[
+  {
+    "role": "Data Analyst",
+    "organisation": "TIAA",
+    "startDate": "June, 2022",
+    "endDate": "Present",
+    "experiences": [
+      "Developed full stack Django app to automate audit reports",
+      "Built ensemble voting model to classify regulations"
+    ],
+    "imageSrc": "history/tiaa.png"
+  },
+  {
+    "role": "Internal Audit Data Analytics Intern",
+    "organisation": "TIAA",
+    "startDate": "June, 2021",
+    "endDate": "Aug, 2020",
+    "experiences": ["Employee risk scoring model in Python"],
+    "imageSrc": "history/tiaa.png"
+  }
+]
