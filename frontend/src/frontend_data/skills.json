@@ -1,22 +1,22 @@
 [
   {
     "title": "Python",
-    "imageSrc": "skills/html.png"
+    "imageSrc": "skills/python.png"
   },
 
   {
     "title": "SQL",
-    "imageSrc": "skills/html.png"
+    "imageSrc": "skills/sql.png"
   },
 
   {
     "title": "Django",
-    "imageSrc": "skills/html.png"
+    "imageSrc": "skills/django.png"
   },
 
   {
     "title": "Javascript",
-    "imageSrc": "skills/html.png"
+    "imageSrc": "skills/javascript.png"
   },
 
   {
@@ -32,10 +32,5 @@
   {
     "title": "CSS",
     "imageSrc": "skills/css.png"
-  },
-
-  {
-    "title": "React",
-    "imageSrc": "skills/react.png"
   }
 ]
