@@ -9,10 +9,13 @@
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  /*font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
-  text-transform: uppercase;
+  text-transform: uppercase;*/
 }
 
 .content {
