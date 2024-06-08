@@ -7,6 +7,7 @@ import { Overview } from "../components/Overview/Overview";
 import { About } from "../components/About/About";
 import { Experience } from "../components/Experience/Experience";
 import { Projects } from "../components/Projects/Projects";
+import { Contact } from "../components/Contact/Contact";
 
 function Home() {
   const [response, setResponse] = useState(
@@ -75,6 +76,7 @@ function Home() {
       ></About>
       <Experience></Experience>
       <Projects></Projects>
+      <Contact></Contact>
     </div>
   );
 }
