@@ -9,7 +9,7 @@ export const Contact = () => {
         <h2>Contact</h2>
         <p>Feel free to reach out </p>
       </div>*/}
-      <ul className={styles.links}>
+      {/*<ul className={styles.links}>
         <li className={styles.link}>
           <a href="mailto:robturro@gmail.com">
             <img
@@ -45,7 +45,7 @@ export const Contact = () => {
             ></img>
           </a>
         </li>
-      </ul>
+      </ul> */}
     </footer>
   );
 };
