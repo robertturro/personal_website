@@ -1,26 +1,54 @@
 [
   {
-    "title": "Project A",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "Recipe Recommender",
+    "imageSrc": "projects/recipe_recommender.png",
+    "description": "A website made with Django that uses a Content-Based Filtering recommendation system to recommend users recipes they may like based off of recipes they have liked.",
+    "skills": [
+      "NLP",
+      "Django",
+      "Frontend Development",
+      "Cosine Similarity",
+      "Recommendation Systems"
+    ],
+
+    "source": "https://github.com/robertturro/Recipe-Recommender"
   },
   {
-    "title": "Project B",
+    "title": "Sales Forecasting Kaggle Competition",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
+    "description": "Kaggle competition in which synthetic data is used to forecast the sale of four different books across six different countries and two different stores. I developed a LGBM model which scored a SMAPE value of 5.85, placing me in the top 25% out of 1381 competitors.",
+    "skills": [
+      "NLP",
+      "Data Visualization",
+      "Machine Learning",
+      "Gradient Boosted Trees",
+      "Model Training"
+    ],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/robertturro/Sales-Forecasting"
   },
   {
-    "title": "Project C",
+    "title": "Personal Website",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
+    "description": "My own personal website which I made using Django for the backend and React for the frontend. The website also includes an AI Assistant which I made by using Retrieval-Augmented Generation on various documents about me which are fed to an OpenAI API.",
+    "skills": [
+      "React",
+      "Django",
+      "RAG",
+      "OpenAI API",
+      "Generative AI",
+      "APIs",
+      "Frontend Development"
+    ],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/robertturro/personal_website"
+  },
+  {
+    "title": "Manufacuring Control Prediction Kaggle Competition",
+    "imageSrc": "projects/project.png",
+    "description": "A Kaggle competition which involved predicting whether a machine is in state 0 or 1. I developed a sequential neural network model using Keras which allowed me to get an under the ROC curve of 0.997, placing me in the top 25% for this competition.",
+    "skills": ["Data Visualization", "Deep Learning", "Data Preprocessing"],
+    "demo": "https://www.example.com",
+    "source": "https://github.com/robertturro/Tabular-Playground-Series---May-2022"
   }
 ]
