@@ -34,23 +34,6 @@ class CreateQuestion(generics.ListCreateAPIView):
         q.save()
 
         return JsonResponse({'response': response})
-    
-    #def get(self, request):
-    #    pass
-
-    #def perform_create(self, serializer, request):
-    #    if serializer.is_valid():
-    #        question = request.POST.get("#question")
-    #        context = get_context(question)
-    #        prompt = create_prompt(context, question)
-    #        response = get_response(prompt)
-
-    #        serializer.save(answer=response)
-    #    else:
-    #        print(serializer.errors)
-
-    #def get_querset(self):
-
 
 
 class CreateLinkClick(generics.CreateAPIView):
