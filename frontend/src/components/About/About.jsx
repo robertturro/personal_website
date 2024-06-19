@@ -13,13 +13,17 @@ export const About = ({
     <section className={style.aboutcontainer} id="about">
       <h2 className={style.abouttitle}>About Me</h2>
       <p className={style.aboutdescription}>
-        Please feel free to ask my AI Assisstant, ROB-BOT, any questions you
-        might have about me!
+        I'm a passionate data enthusiast with a love for machine learning and
+        programming. I am always looking for ways to increase my skills and
+        knowledge in the machine learning and tech space either through personal
+        projects, Kaggle competitions, or taking on challenging projects at
+        work. But enough from me! Please feel free to ask my personal AI
+        Assisstant, ROB-BOT, any questions you might have about me!
         <br></br>
         <br></br>
-        You can ask anything either about me personally such as: "Where is
-        Robert from?" or "Where did Robert go to College?". Or you can ask about
-        any projects I have done or what skills do I have.
+        You can ask anything about me personally such as: "Where is Robert
+        from?" or "Where did Robert go to College?". Or you can ask about any
+        projects I have done and any technical skills I have.
       </p>
 
       <div className={style.aboutcontent}>

@@ -43,6 +43,7 @@
   justify-content: center;
   width: 120px;
   height: 120px;
+  box-shadow: 0 0px 10px 0 #f263ff;
 }
 
 .skillImageContainer img {
@@ -71,6 +72,13 @@
   background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
   border-radius: 10px;
   padding: 24px;
+  box-shadow: 0 0px 20px 0 #f263ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historyItem:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .historyItem img {

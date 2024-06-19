@@ -65,7 +65,8 @@
   ); /* Gradient background */
   border: 1px solid #ccc; /* Border */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 0px 5px 0 #f263ff;
   margin: auto;
   display: block;
   resize: none;
@@ -73,8 +74,8 @@
 }
 
 .question:focus {
-  border-color: #66afe9; /* Border color on focus */
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Shadow on focus */
+  /*border-color: #f263ff; /* Border color on focus */
+  box-shadow: 0 0px 10px 0 #f263ff; /* Shadow on focus */
   outline: none; /* Remove default outline */
 }
 
@@ -95,12 +96,14 @@
 }
 
 .askBtn:hover {
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Add a glowing effect on hover */
+  /*box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Add a glowing effect on hover */
+  box-shadow: 0 0 10px #f263ff;
 }
 
 .askBtn:active {
   transform: translateY(2px);
   color: gray;
+  border-color: #f263ff;
 }
 
 .response {
@@ -118,7 +121,8 @@
   ); /* Gradient background */
   border: 1px solid #ccc; /* Border */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 0px 5px 0 #f263ff;
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -129,8 +133,8 @@
 }
 
 .response:focus {
-  border-color: #66afe9; /* Border color on focus */
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Shadow on focus */
+  /*border-color: #66afe9; /* Border color on focus */
+  box-shadow: 0 0px 10px 0 #f263ff; /* Shadow on focus */
   outline: none; /* Remove default outline */
 }
 

@@ -6,7 +6,8 @@
     "endDate": "Present",
     "experiences": [
       "Developed full stack Django app to automate audit reports",
-      "Built ensemble voting model to classify regulations"
+      "Built voting ensemble model to classify regulations",
+      "Extracted topics from raw audit issues using transformer models"
     ],
     "imageSrc": "history/tiaa.png"
   },
@@ -15,7 +16,7 @@
     "organisation": "TIAA",
     "startDate": "June, 2021",
     "endDate": "Aug, 2021",
-    "experiences": ["Employee risk scoring model in Python"],
+    "experiences": ["Developed an employee risk scoring model in Python"],
     "imageSrc": "history/tiaa.png"
   }
 ]

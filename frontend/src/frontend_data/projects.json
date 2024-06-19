@@ -14,9 +14,9 @@
     "source": "https://github.com/robertturro/Recipe-Recommender"
   },
   {
-    "title": "Sales Forecasting Kaggle Competition",
+    "title": "Sales Forecasting Model",
     "imageSrc": "projects/project.png",
-    "description": "Kaggle competition in which synthetic data is used to forecast the sale of four different books across six different countries and two different stores. I developed a LGBM model which scored a SMAPE value of 5.85, placing me in the top 25% out of 1381 competitors.",
+    "description": "Developed a LGBM model for a Kaggle competition using synthetic data to forecast book sales across various countries and stores. My model achieved a SMAPE of 5.85, placing in the top 25% of 1381 participants.",
     "skills": [
       "NLP",
       "Data Visualization",
@@ -46,7 +46,7 @@
   {
     "title": "Manufacuring Control Prediction Kaggle Competition",
     "imageSrc": "projects/project.png",
-    "description": "A Kaggle competition which involved predicting whether a machine is in state 0 or 1. I developed a sequential neural network model using Keras which allowed me to get an under the ROC curve of 0.997, placing me in the top 25% for this competition.",
+    "description": "Developed a Keras sequential neural network for a Kaggle competition to predict machine states. My model got an AUC of 0.997 and placing in the top 25%.",
     "skills": ["Data Visualization", "Deep Learning", "Data Preprocessing"],
     "demo": "https://www.example.com",
     "source": "https://github.com/robertturro/Tabular-Playground-Series---May-2022"
