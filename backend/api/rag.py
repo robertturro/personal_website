@@ -16,13 +16,15 @@ from dataclasses import dataclass
 import os
 import time 
 import warnings
+from dotenv import load_dotenv
 warnings.filterwarnings('ignore')
+load_dotenv()
 
 CHROMA_PATH = r"D:\personal_website\backend\chroma"
 DATA_PATH = r"D:\personal_website\backend\data"
 
-client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
-assistant_id = os.environ['ASSISSTANT_ID']
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+assistant_id = os.getenv('ASSISSTANT_ID')
 assistant = client.beta.assistants.retrieve(assistant_id)
 
 def get_context(question):
