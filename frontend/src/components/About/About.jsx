@@ -1,4 +1,4 @@
-import React, { useState, useMemo, memo } from "react";
+import React, { useState, useMemo, memo, useRef, useEffect } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -23,19 +23,19 @@ export const About = ({
     if (event.key === "Enter") {
       event.preventDefault();
 
-      /*let reader; */
+      let reader;
       const prompt = event.currentTarget.value;
 
       setMessages((oldMessages) => [
         ...(oldMessages ?? []),
         {
-          from: "me",
+          from: "you",
           message: prompt,
         },
       ]);
 
-      /*setLoading(true);*/
       /*
+      setLoading(true);
       fetch(`/chat?prompt=${prompt}`).then((response) => {
         setLoading(false);
         reader = response.body.getReader();
@@ -64,9 +64,11 @@ export const About = ({
         };
 
         readStream();
-      });
-      */
+      });*/
+
       let data = "ROB-BOT is currently under repair. He will be back soon!";
+
+      const getRag = singleton("rag", () => buildRAG());
 
       setMessages((oldMessages) => [
         ...oldMessages,
@@ -82,14 +84,69 @@ export const About = ({
     }
   };
 
+  /*
+  const handleChatMessage = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      let reader;
+      const prompt = event.currentTarget.value;
+
+      setMessages((oldMessages) => [
+        ...(oldMessages ?? []),
+        {
+          from: "you",
+          message: prompt,
+        },
+      ]);
+
+      setLoading(true);
+      console.log(prompt);
+ 
+      fetch(`/chat?prompt=${encodeURIComponent(prompt)}`).then((response) => {
+        console.log(response);
+        setLoading(false);
+        reader = response.body.getReader();
+        console.log(reader);
+
+        let data = "";
+
+        const readStream = async () => {
+          const { done, value } = await reader.read();
+          console.log(value);
+
+          if (done) {
+            setMessages((oldMessages) => [
+              ...oldMessages,
+              {
+                from: "bot",
+                message: data,
+              },
+            ]);
+            setLastMessage(null);
+            reader.releaseLock();
+            return;
+          }
+
+          data += new TextDecoder("utf-8").decode(value);
+          console.log(data);
+          setLastMessage(data);
+          readStream();
+        };
+
+        readStream();
+      });
+
+      event.currentTarget.value = "";
+    }
+  };*/
+
   const ChatMessage = memo(({ from, message }) => {
-    console.log(from);
-    console.log(message);
     return (
       <div className="flex mb-2 items-center gap-4 p-4">
-        {from === "me" && (
+        {from === "you" && (
           /*  className="rounded-[50%] h-[50px] w-[50px] bg-slate-100 leading-[3em] text-center" */
-          <span className={style.chattext_label}>Me</span>
+          <span className={style.chattext_label}>You</span>
         )}
 
         {from === "bot" && (
@@ -98,7 +155,7 @@ export const About = ({
 
         <Markdown
           children={message}
-          className={from === "me" ? style.chattext_user : style.chattext_bot}
+          className={from === "you" ? style.chattext_user : style.chattext_bot}
           components={{
             p(props) {
               const { children, className, node, ...rest } = props;
@@ -136,7 +193,6 @@ export const About = ({
   });
 
   const chatMessages = useMemo(() => {
-    console.log(messages);
     return messages.map(({ from, message }, index) => (
       <li key={index}>
         <ChatMessage from={from} message={message} />

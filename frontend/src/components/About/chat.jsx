@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { buildRAG, promptLLM } from "~/utils/rag.server";
-import { singleton } from "~/utils/singleton.server";
+import { buildRAG, promptLLM } from "../../rag/rag.server";
+import { singleton } from "../../rag/singleton.server";
 
 const RAGComponent = () => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(true);
-  const prompt = new URL(window.location.href).searchParams.get("prompt");
+  /*const prompt = new URL(window.location.href).searchParams.get("prompt"); */
+
+  console.log(prompt);
 
   useEffect(() => {
     const fetchRAGResponse = async () => {
       if (!prompt) {
         setLoading(false);
+        console.log("HERE3");
         return;
       }
 
@@ -41,12 +44,12 @@ const RAGComponent = () => {
         },
       });
 
-      const response = new Response(readableStream);
+      const response = "text"; /*new Response(readableStream);*/
       const text = await response.text(); // Assuming you want the text from the response
-      setResponse(text);
+      setResponse(response);
       setLoading(false);
     };
-
+    console.log("HERE4");
     fetchRAGResponse();
   }, [prompt]);
 

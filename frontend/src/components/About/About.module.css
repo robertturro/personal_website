@@ -79,6 +79,9 @@
 
   overflow-y: auto; /* Vertical scroll if content exceeds height */
   overflow-x: hidden; /* Prevent horizontal scrolling */
+
+  /* New scroll-snap properties */
+  scroll-snap-type: y mandatory;
 }
 
 .chattext_label {
@@ -113,6 +116,10 @@
 
 .chat_list {
   color: #ffffff;
+}
+
+.chat_list > li:last-child {
+  scroll-snap-align: end; /* Ensures the last child aligns to the bottom */
 }
 
 .chatinput {

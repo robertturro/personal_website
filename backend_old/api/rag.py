@@ -51,7 +51,7 @@ def get_context(question):
     
     else:
         page_content = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
-
+ 
 
     return page_content
 
