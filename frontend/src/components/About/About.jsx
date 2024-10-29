@@ -4,6 +4,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 /*import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";*/
+import { buildRAG, promptLLM } from "../../rag/rag.server";
+import { singleton } from "../../rag/singleton.server";
 
 import { getImageUrl } from "../../utils";
 import style from "./About.module.css";
@@ -69,6 +71,10 @@ export const About = ({
       let data = "ROB-BOT is currently under repair. He will be back soon!";
 
       const getRag = singleton("rag", () => buildRAG());
+      console.log(getRag);
+
+      const stream = promptLLM(prompt, getRag);
+      console.log(stream);
 
       setMessages((oldMessages) => [
         ...oldMessages,
