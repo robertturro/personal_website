@@ -1,7 +1,8 @@
 import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
-const apiUrl = "/choreo-apis/personalwebsite/backend/v1.0";
+//const apiUrl = "/choreo-apis/personalwebsite/backend/v1.0";
+const apiUrl = "http://localhost:8000";
 
 const api = axios.create({
   baseURL: apiUrl,

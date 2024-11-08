@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from rest_framework import generics
 from .serializers import UserSerializer, QuestionSerializer, LinkClickSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Question, LinkClick
+#from .models import Question, LinkClick
 from .rag import *
 from datetime import date
 import json
@@ -17,7 +17,7 @@ class CreateUserView(generics.CreateAPIView):
  
 
 class CreateQuestion(generics.ListCreateAPIView):
-    queryset = Question.objects.all()
+    #queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     permission_classes = [AllowAny]
 
@@ -30,16 +30,16 @@ class CreateQuestion(generics.ListCreateAPIView):
         thread = create_thread()
         response = get_response(prompt, thread)
 
-        q = Question(question=question, date=date.today(), answer=response)
-        q.save()
+        #q = Question(question=question, date=date.today(), answer=response)
+        #q.save()
 
         return JsonResponse({'response': response})
 
 
-class CreateLinkClick(generics.CreateAPIView):
-    queryset = LinkClick.objects.all()
-    serializer_class = LinkClickSerializer
-    permission_classes = [AllowAny]
+#class CreateLinkClick(generics.CreateAPIView):
+#    queryset = LinkClick.objects.all()
+#    serializer_class = LinkClickSerializer
+#    permission_classes = [AllowAny]
 
 
 
