@@ -27,6 +27,7 @@ class CreateQuestion(generics.ListCreateAPIView):
 
         context = get_context(question)
         prompt = create_prompt(context, question)
+        
         thread = create_thread()
         response = get_response(prompt, thread)
 
