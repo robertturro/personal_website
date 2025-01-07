@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Question, LinkClick
+from .models import Question
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,11 +20,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         extra_kwargs = {"answer": {"read_only": True}}
 
 
-class LinkClickSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Question
-        fields = ["link_clicked", "date"]
-    
+
 
     
 

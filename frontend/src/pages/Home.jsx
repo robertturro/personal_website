@@ -16,20 +16,6 @@ function Home() {
   const [question, setQuestion] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  /*useEffect(() => {
-    getResponse();
-  }, []);
-  const getResponse = () => {
-    api
-      .get("/api/chat/")
-      .then((res) => res.data)
-      .then((data) => {
-        setResponse(data);
-        console.log(data);
-      })
-      .catch((err) => alert(err));
-  };*/
-
   const sendQuestion = (e) => {
     e.preventDefault();
     setResponse("");
@@ -38,9 +24,10 @@ function Home() {
       .post("/api/chat/", { question })
       .then((res) => res.data)
       .then((data) => {
+        console.log(data.response);
         setResponse(data.response);
         setIsLoading(false);
-        console.log(data.response);
+        console.log("HERE");
       })
       .catch((err) => alert(err));
   };

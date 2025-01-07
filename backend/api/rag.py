@@ -116,6 +116,54 @@ def get_response(prompt, thread):
     return "\n".join(out)
 
 
+class EventHandler(AssistantEventHandler):    
+  @override
+  def on_text_created(self, text) -> None:
+    print(f"\nassistant > ", end="", flush=True)
+      
+  @override
+  def on_text_delta(self, delta, snapshot):
+    print(delta.value, end="", flush=True)
+      
+  def on_tool_call_created(self, tool_call):
+    print(f"\nassistant > {tool_call.type}\n", flush=True)
+  
+  def on_tool_call_delta(self, delta, snapshot):
+    if delta.type == 'code_interpreter':
+      if delta.code_interpreter.input:
+        print(delta.code_interpreter.input, end="", flush=True)
+      if delta.code_interpreter.outputs:
+        print(f"\n\noutput >", flush=True)
+        for output in delta.code_interpreter.outputs:
+          if output.type == "logs":
+            print(f"\n{output.logs}", flush=True)
+
+
+
+def get_response_stream(prompt, thread):
+    global client
+    global assistant
+    # Send the prompt as a message
+    client.beta.threads.messages.create(
+        thread_id=thread.id,
+        role="user",
+        content=prompt
+    )
+
+    # Define a generator function to yield each chunk of the stream
+    
+    with client.beta.threads.runs.stream(
+        thread_id=thread.id,
+        assistant_id=assistant.id,
+        # instructions="Please address the user as Jane Doe. The user has a premium account.",
+        event_handler=EventHandler(),
+    ) as stream:
+        # Yield each piece of data from the stream
+        for chunk in stream:
+            yield chunk.data  # Adjust if 'chunk.data' contains your streaming content
+        yield "Stream complete."
+
+
 
     
 
