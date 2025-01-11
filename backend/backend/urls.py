@@ -5,6 +5,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from backend import settings
 from django.conf.urls.static import static
 from backend.views import index
+# test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
