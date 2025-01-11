@@ -24,8 +24,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/personal_website:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/personal_website:latest
+          docker build -t "${{ secrets.DOCKER_USERNAME }}/personal_website:latest" .
+          docker push "${{ secrets.DOCKER_USERNAME }}/personal_website:latest"
 
       - name: Setup SSH
         run: |
