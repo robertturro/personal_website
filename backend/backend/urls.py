@@ -1,8 +1,10 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from api.views import CreateUserView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
+from backend import settings
+from django.conf.urls.static import static
+from backend.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,4 +13,11 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth", include("rest_framework.urls")),
     path("api/", include("api.urls")),
+]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
+urlpatterns+=[
+    re_path(r'^(?:.*)/?$',index,name='index')
 ]
