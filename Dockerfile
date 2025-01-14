@@ -31,7 +31,7 @@ RUN pip install -r ./backend/requirements.txt
 #Copy the frontend build to the Django project
 COPY --from=build-stage ./code/frontend/build /code/backend/static/
 COPY --from=build-stage ./code/frontend/build/static /code/backend/static/
-COPY --from=build-stage ./code/frontend/build/index.html /code/backend/backend/templates/index.html
+COPY --from=build-stage ./code/frontend/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
 RUN python ./backend/manage.py migrate
