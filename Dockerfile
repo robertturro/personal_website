@@ -34,7 +34,7 @@ COPY --from=build-stage ./code/frontend /code/backend/static/
 COPY --from=build-stage ./code/frontend/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
-RUN python ./backend/manage.py migrate
+RUN python ./backend/python manage.py migrate
 
 #Run Django Collectstatic Command
 RUN python ./backend/manage.py collectstatic --no-input
