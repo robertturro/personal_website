@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 #Stage 2:Build Backend
-FROM python:3:12
+FROM python:3.12.3 
 
 #Set Environment Variables
 ENV PYTHONDONTWRITEBYTECODE 1
