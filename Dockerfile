@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 #Stage 2:Build Backend
-FROM python:3.12.3 
+FROM python:3.12.1 
 
 #Set Environment Variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -34,7 +34,7 @@ COPY --from=build-stage ./code/frontend /code/backend/static/
 COPY --from=build-stage ./code/frontend/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
-RUN python ./backend/python manage.py migrate
+RUN python ./backend/manage.py migrate
 
 #Run Django Collectstatic Command
 RUN python ./backend/manage.py collectstatic --no-input
