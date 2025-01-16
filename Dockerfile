@@ -45,5 +45,5 @@ EXPOSE 80
 WORKDIR /code/backend
 
 #Run the Django Server
-CMD ["gunicorn", "backend.wsgi.application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
 
