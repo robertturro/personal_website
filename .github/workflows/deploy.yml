@@ -5,6 +5,15 @@ on:
     branches:
       - main
 
+env:
+  openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+  assisstant_id: ${{ secrets.ASSISSTANT_ID }}
+  db_host: ${{ secrets.DB_HOST }}
+  db_port: ${{ secrets.DB_PORT }}
+  db_user: ${{ secrets.DB_USER }}
+  db_name: ${{ secrets.DB_NAME }}
+  db_pwd: ${{ secrets.DB_PWD }}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
