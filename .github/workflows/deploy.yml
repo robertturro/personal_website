@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  secret_key: ${{ secrets.SECRET_KEY }}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
