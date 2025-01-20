@@ -5,10 +5,6 @@ on:
     branches:
       - main
 
-env:
-  openai_api_key: ${{ secrets.OPENAI_API_KEY }}
-  assisstant_id: ${{ secrets.ASSISSTANT_ID }}
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -36,6 +32,8 @@ jobs:
               --build-arg db_port="${{ secrets.DB_PORT }}" \
               --build-arg db_user="${{ secrets.DB_USER }}" \
               --build-arg db_pwd="${{ secrets.DB_PWD }}" \
+              --build-arg openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
+              --build-arg assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
               -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
 
@@ -60,5 +58,7 @@ jobs:
               -e db_pwd="${{ secrets.DB_PWD }}" \
               -e db_host="${{ secrets.DB_HOST }}" \
               -e db_port="${{ secrets.DB_PORT }}" \
+              -e openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
+              -e assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
               ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
           EOF
