@@ -19,6 +19,8 @@ FROM python:3.12.1
 #Set Environment Variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ARG secret_key
+ENV SECRET_KEY=$secret_key
 
 WORKDIR /code
 

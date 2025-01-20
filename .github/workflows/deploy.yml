@@ -8,8 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      secret_key: ${{ secrets.SECRET_KEY }}
 
     steps:
       - name: Checkout
@@ -26,7 +24,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
+          docker build --build-arg secret_key=${{ secrets.SECRET_KEY }} -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
 
       - name: Setup SSH
@@ -43,5 +41,5 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
             docker stop personal-website || true
             docker rm personal-website || true
-            docker run -d --name personal-website -p 80:8000 ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
+            docker run -d --name personal-website -p 80:8000 -e secret_key=${{ secrets.SECRET_KEY }} ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
           EOF
