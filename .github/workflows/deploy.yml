@@ -41,5 +41,5 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
             docker stop personal-website || true
             docker rm personal-website || true
-            docker run -d --name personal-website -p 80:8000 -e secret_key=${{ secrets.SECRET_KEY }} ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
+            docker run -d --name personal-website -p 80:8000 -e secret_key="${{ secrets.SECRET_KEY }}" ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
           EOF
