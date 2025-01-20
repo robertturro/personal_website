@@ -28,7 +28,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build --build-arg secret_key="${{ secrets.SECRET_KEY }}" db_name=${{ secrets.DB_NAME }} db_host=${{ secrets.DB_HOST }} db_port=${{ secrets.DB_PORT }} db_user=${{ secrets.DB_USER }} db_pwd=${{ secrets.db_pwd }} -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
+          docker build --build-arg secret_key="${{ secrets.SECRET_KEY }}" --build-arg db_name=${{ secrets.DB_NAME }} --build-arg db_host=${{ secrets.DB_HOST }} --build-arg db_port=${{ secrets.DB_PORT }} --build-arg db_user=${{ secrets.DB_USER }} --build-arg db_pwd=${{ secrets.db_pwd }} -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
 
       - name: Setup SSH
