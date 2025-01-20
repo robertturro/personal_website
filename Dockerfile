@@ -13,7 +13,7 @@ RUN npm install
 #Building the frontend
 RUN npm run build
 
-RUN ls -l /code/frontend
+RUN ls -l /code/frontend/dist
 
 #Stage 2:Build Backend
 FROM python:3.12.1 
@@ -33,9 +33,9 @@ COPY ./backend/ /code/backend/
 RUN pip install -r ./backend/requirements.txt
 
 #Copy the frontend build to the Django project
-COPY --from=build-stage ./code/frontend/build /code/backend/static/
-COPY --from=build-stage ./code/frontend/build/static /code/backend/static/
-COPY --from=build-stage ./code/frontend/build/index.html /code/backend/backend/templates/index.html
+COPY --from=build-stage ./code/frontend/dist /code/backend/static/
+COPY --from=build-stage ./code/frontend/dist/static /code/backend/static/
+COPY --from=build-stage ./code/frontend/dist/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
 #RUN python ./backend/manage.py migrate
