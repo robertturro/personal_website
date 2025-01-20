@@ -13,6 +13,8 @@ RUN npm install
 #Building the frontend
 RUN npm run build
 
+RUN ls -l /code/frontend/build
+
 #Stage 2:Build Backend
 FROM python:3.12.1 
 
