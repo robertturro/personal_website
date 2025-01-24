@@ -60,7 +60,7 @@ COPY --from=build-stage ./code/frontend/dist/index.html /code/backend/backend/te
 RUN python ./backend/manage.py collectstatic --no-input
 
 #Expose the port
-EXPOSE 8000
+EXPOSE 80
 
 WORKDIR /code/backend
 
