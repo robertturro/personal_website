@@ -28,13 +28,14 @@ class CreateQuestion(generics.ListCreateAPIView):
         data = json.loads(request.body)
         question = data.get('question')
 
-        context = get_context(question)
-        prompt = create_prompt(context, question)
-        thread = create_thread()
-        response = get_response(prompt, thread)
+        #context = get_context(question)
+        #prompt = create_prompt(context, question)
+        #thread = create_thread()
+        #response = get_response(prompt, thread)
 
-        q = Question(question=question, date=date.today(), answer=response)
-        q.save()
+        #q = Question(question=question, date=date.today(), answer=response)
+        #q.save()
+        response = question
 
         return JsonResponse({'response': response})
         
