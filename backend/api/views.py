@@ -4,7 +4,7 @@ from rest_framework import generics
 from .serializers import UserSerializer, QuestionSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Question
-from .rag import *
+#from .rag import *
 from datetime import date
 import json
 from django.http import JsonResponse, HttpResponse, StreamingHttpResponse
