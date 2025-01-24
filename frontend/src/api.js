@@ -5,6 +5,8 @@ import { ACCESS_TOKEN } from "./constants";
 const apiUrl = "http://localhost:8000";
 //const apiUrl = "ec2-3-129-6-154.us-east-2.compute.amazonaws.com/";
 
+console.log("HERE");
+
 const api = axios.create({
   baseURL: apiUrl,
   /*baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiUrl,*/
