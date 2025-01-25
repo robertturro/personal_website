@@ -54,8 +54,8 @@ COPY --from=build-stage ./code/frontend/dist /code/backend/static/
 COPY --from=build-stage ./code/frontend/dist/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
-RUN python ./backend/manage.py makemigrations
-RUN python ./backend/manage.py migrate
+#RUN python ./backend/manage.py makemigrations
+#RUN python ./backend/manage.py migrate
 
 #Run Django Collectstatic Command
 RUN python ./backend/manage.py collectstatic --no-input
@@ -66,5 +66,6 @@ EXPOSE 80
 WORKDIR /code/backend
 
 #Run the Django Server
-CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+#CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python backend/manage.py makemigrations && python backend/manage.py migrate && gunicorn backend.wsgi:application --bind 0.0.0.0:8000"]
 
