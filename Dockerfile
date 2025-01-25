@@ -24,20 +24,20 @@ ENV PYTHONUNBUFFERED 1
 ARG secret_key
 ENV SECRET_KEY=$secret_key
 
-#ARG db_name
-#ENV DB_NAME=$db_name
+ARG db_name
+ENV DB_NAME=$db_name
 
-#ARG db_user
-#ENV DB_USER=$db_user
+ARG db_user
+ENV DB_USER=$db_user
 
-#ARG db_pwd
-#ENV DB_PWD=$db_pwd
+ARG db_pwd
+ENV DB_PWD=$db_pwd
 
-#ARG db_port
-#ENV DB_PORT=$db_port
+ARG db_port
+ENV DB_PORT=$db_port
 
-#ARG db_host
-#ENV DB_HOST=$db_host
+ARG db_host
+ENV DB_HOST=$db_host
 
 
 WORKDIR /code
@@ -54,7 +54,6 @@ COPY --from=build-stage ./code/frontend/dist /code/backend/static/
 COPY --from=build-stage ./code/frontend/dist/index.html /code/backend/backend/templates/index.html
 
 #Run Django Migration Command
-#RUN python ./backend/manage.py makemigrations
 #RUN python ./backend/manage.py migrate
 
 #Run Django Collectstatic Command
