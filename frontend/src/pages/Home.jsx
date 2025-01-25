@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import api from "../api";
+//import api from "../api";
 import styles from "../home.module.css";
 import "../index.css";
 import { Navbar } from "../components/Navbar/Navbar";
@@ -20,7 +20,7 @@ function Home() {
     e.preventDefault();
     setResponse("");
     setIsLoading(true);
-    setResponse(question);
+    setResponse("response");
     setIsLoading(false);
     /*api
       .post("/api/chat/", { question })
