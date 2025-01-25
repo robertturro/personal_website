@@ -27,7 +27,6 @@ class CreateQuestion(generics.ListCreateAPIView):
     def post(self, request): 
         data = json.loads(request.body)
         question = data.get('question')
-        response = question
 
         #context = get_context(question)
         #prompt = create_prompt(context, question)
@@ -36,6 +35,7 @@ class CreateQuestion(generics.ListCreateAPIView):
 
         #q = Question(question=question, date=date.today(), answer=response)
         #q.save()
+        response = question
 
         return JsonResponse({'response': response})
         

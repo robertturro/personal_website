@@ -11,7 +11,7 @@ from langchain.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain.agents.openai_assistant import OpenAIAssistantRunnable
 from typing_extensions import override
-from openai import AssistantEventHandler
+from openai import AssistantEventHandler 
 from dataclasses import dataclass 
 import os
 import time 
@@ -23,8 +23,10 @@ load_dotenv()
 CHROMA_PATH = r"D:\personal_website\backend\chroma"
 DATA_PATH = r"D:\personal_website\backend\data"
 
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-assistant_id = os.getenv('ASSISSTANT_ID')
+#client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+#assistant_id = os.getenv('ASSISSTANT_ID')
+client = OpenAI(api_key=os.environ["openai_api_key"])
+assistant_id = os.environ["assisstant_id"]
 assistant = client.beta.assistants.retrieve(assistant_id)
 
 def get_context(question):
