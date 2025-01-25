@@ -25,9 +25,9 @@ DATA_PATH = r"D:\personal_website\backend\data"
 
 #client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 #assistant_id = os.getenv('ASSISSTANT_ID')
-client = OpenAI(api_key=os.environ["openai_api_key"])
-assistant_id = os.environ["assisstant_id"]
-assistant = client.beta.assistants.retrieve(assistant_id)
+#client = OpenAI(api_key=os.environ["openai_api_key"])
+#assistant_id = os.environ["assisstant_id"]
+#assistant = client.beta.assistants.retrieve(assistant_id)
 
 def get_context(question):
     # Prepare the DB.
