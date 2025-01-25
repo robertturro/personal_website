@@ -20,7 +20,9 @@ function Home() {
     e.preventDefault();
     setResponse("");
     setIsLoading(true);
-    api
+    setResponse(question);
+    setIsLoading(false);
+    /*api
       .post("/api/chat/", { question })
       .then((res) => res.data)
       .then((data) => {
@@ -29,7 +31,7 @@ function Home() {
         setIsLoading(false);
         console.log("HERE");
       })
-      .catch((err) => alert(err));
+      .catch((err) => alert(err));*/
   };
 
   const handleKeyDown = (e) => {
