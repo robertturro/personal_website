@@ -27,6 +27,13 @@ jobs:
           run: |
             docker build \
               --build-arg secret_key="${{ secrets.SECRET_KEY }}" \
+              --build-arg db_name="${{ secrets.DB_NAME }}" \
+              --build-arg db_host="${{ secrets.DB_HOST }}" \
+              --build-arg db_port="${{ secrets.DB_PORT }}" \
+              --build-arg db_user="${{ secrets.DB_USER }}" \
+              --build-arg db_pwd="${{ secrets.DB_PWD }}" \
+              --build-arg openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
+              --build-arg assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
               -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
 
@@ -46,5 +53,12 @@ jobs:
             docker rm personal-website || true
             docker run -d --name personal-website -p 80:8000 \
               -e secret_key="${{ secrets.SECRET_KEY }}" \
+              -e db_name="${{ secrets.DB_NAME }}" \
+              -e db_user="${{ secrets.DB_USER }}" \
+              -e db_pwd="${{ secrets.DB_PWD }}" \
+              -e db_host="${{ secrets.DB_HOST }}" \
+              -e db_port="${{ secrets.DB_PORT }}" \
+              -e openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
+              -e assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
               ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
           EOF
