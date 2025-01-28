@@ -20,8 +20,6 @@ function Home() {
     e.preventDefault();
     setResponse("");
     setIsLoading(true);
-    setResponse("response");
-    setIsLoading(false);
     api
       .post("/api/chat/", { question })
       .then((res) => res.data)
