@@ -34,8 +34,8 @@ jobs:
               --build-arg db_pwd="${{ secrets.DB_PWD }}" \
               --build-arg openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
               --build-arg assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
-              -t ${{ secrets.DOCKER_USERNAME }}/personal-website:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
+              -t ${{ secrets.DOCKER_USERNAME }}/personal-website2:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/personal-website2:latest
 
       - name: Setup SSH
         run: |
@@ -48,10 +48,10 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.AWS_EC2_IP }} << 'EOF'
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-            docker pull ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
-            docker stop personal-website || true
-            docker rm personal-website || true
-            docker run -d --name personal-website -p 80:8000 \
+            docker pull ${{ secrets.DOCKER_USERNAME }}/personal-website2:latest
+            docker stop personal-website2 || true
+            docker rm personal-website2 || true
+            docker run -d --name personal-website2 -p 80:8000 \
               -e secret_key="${{ secrets.SECRET_KEY }}" \
               -e db_name="${{ secrets.DB_NAME }}" \
               -e db_user="${{ secrets.DB_USER }}" \
@@ -60,5 +60,5 @@ jobs:
               -e db_port="${{ secrets.DB_PORT }}" \
               -e openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
               -e assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
-              ${{ secrets.DOCKER_USERNAME }}/personal-website:latest
+              ${{ secrets.DOCKER_USERNAME }}/personal-website2:latest
           EOF
