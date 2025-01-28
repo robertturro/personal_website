@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//import api from "../api";
+import api from "../api";
 import styles from "../home.module.css";
 import "../index.css";
 import { Navbar } from "../components/Navbar/Navbar";
@@ -22,7 +22,7 @@ function Home() {
     setIsLoading(true);
     setResponse("response");
     setIsLoading(false);
-    /*api
+    api
       .post("/api/chat/", { question })
       .then((res) => res.data)
       .then((data) => {
@@ -31,7 +31,7 @@ function Home() {
         setIsLoading(false);
         console.log("HERE");
       })
-      .catch((err) => alert(err));*/
+      .catch((err) => alert(err));
   };
 
   const handleKeyDown = (e) => {
