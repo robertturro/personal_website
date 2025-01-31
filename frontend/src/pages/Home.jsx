@@ -24,10 +24,8 @@ function Home() {
       .post("/api/chat/", { question })
       .then((res) => res.data)
       .then((data) => {
-        console.log(data.response);
         setResponse(data.response);
         setIsLoading(false);
-        console.log("HERE");
       })
       .catch((err) => alert(err));
   };
