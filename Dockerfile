@@ -39,6 +39,12 @@ ENV DB_PORT=$db_port
 ARG db_host
 ENV DB_HOST=$db_host
 
+ARG openai_api_key
+ENV OPENAI_API_KEY=$openai_api_key 
+
+ARG assisstant_id
+ENV ASSISSTANT_ID=$assisstant_id
+
 
 WORKDIR /code
 

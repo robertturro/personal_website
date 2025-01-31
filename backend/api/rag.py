@@ -23,10 +23,11 @@ load_dotenv()
 CHROMA_PATH = r"D:\personal_website\backend\chroma"
 DATA_PATH = r"D:\personal_website\backend\data"
 
-#client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-#assistant_id = os.getenv('ASSISSTANT_ID')
-client = OpenAI(api_key=os.environ["openai_api_key"])
-assistant_id = os.environ["assisstant_id"]
+client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+assistant_id = os.environ['ASSISSTANT_ID']
+
+#client = OpenAI(api_key=os.environ["openai_api_key"])
+#assistant_id = os.environ["assisstant_id"]
 assistant = client.beta.assistants.retrieve(assistant_id)
 
 def get_context(question):
