@@ -11,7 +11,7 @@ import { Contact } from "../components/Contact/Contact";
 
 function Home() {
   const [response, setResponse] = useState(
-    "ROB-BOT's response will be displayed here xxx."
+    "ROB-BOT's response will be displayed here."
   );
   const [question, setQuestion] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

@@ -33,8 +33,8 @@ class CreateQuestion(generics.ListCreateAPIView):
         thread = create_thread()
         response = get_response(prompt, thread)
 
-        q = Question(question=question, date=date.today(), answer=response)
-        q.save()
+        #q = Question(question=question, date=date.today(), answer=response)
+        #q.save()
 
         return JsonResponse({'response': response})
         
