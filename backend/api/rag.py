@@ -20,8 +20,9 @@ from dotenv import load_dotenv
 warnings.filterwarnings('ignore')
 load_dotenv()
  
-CHROMA_PATH = r"D:\personal_website\backend\chroma"
-DATA_PATH = r"D:\personal_website\backend\data"
+#CHROMA_PATH = r"D:\personal_website\backend\chroma"
+#DATA_PATH = r"D:\personal_website\backend\data"
+CHROMA_PATH = r"\test\data"
 
 client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 assistant_id = os.environ['ASSISSTANT_ID']
