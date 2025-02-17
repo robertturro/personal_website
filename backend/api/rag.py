@@ -37,7 +37,7 @@ def get_context(question):
 
     # Search the DB.
     results = db.similarity_search_with_relevance_scores(question, k=15)
-    if len(results) == 0 or results[0][1] < 0.5:
+    if len(results) == 0: # or results[0][1] < 0.5:
         page_content = """
         Robert Turro was born April 19th 2000 in Pequannock Township, New Jersey. He is the youngest of three children, having two older sisters, and is the son of a high school gym teacher and a nurse. 
         Robert grew up in the quit rural town of Wantage, New Jersey, which is located in the very northern part of the state. 
