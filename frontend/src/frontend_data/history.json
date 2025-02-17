@@ -5,9 +5,9 @@
     "startDate": "June, 2022",
     "endDate": "Present",
     "experiences": [
-      "Developed full stack Django app to automate audit reports",
-      "Built voting ensemble model to classify regulations",
-      "Extracted topics from raw audit issues using transformer models"
+      "Developed full stack Django Apps to improve operational efficiency",
+      "Built voting ensemble classification model to identify new regulations that are applicable to TIAA",
+      "Create data pipelines to join data from databases across the company to assist auditors in audit testing"
     ],
     "imageSrc": "history/tiaa.png"
   },

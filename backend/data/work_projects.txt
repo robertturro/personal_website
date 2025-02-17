@@ -1,0 +1,56 @@
+These are some of the notable things Robert has done as a Data Analyst at TIAA:
+
+
+Internal Data Science Competition Winner:
+From February 2024 to April 2024 TIAA hosted an internal machine learning competition, open to all associates throughout the company. Robert was one of 200 employees who signed up for this competition and was put on a random team with 5 other TIAA employees he had never met before. The problem statement was to create a model that can read in the raw text of new regulations and be able to predict if the regulation is applicable to TIAA or not. Models were judged based off of F1 score and the team that had the best F1 score would win. Robert took the lead from the model development perspective and helped his team develop a voting ensemble model which consisted of numerous CatBoost Classifiers and Deberta Models, and the model that Robert created ended up having the best F1 score and winning the competition. As a result of his performance in the competition, Robert was asked to share and explain his winning approach on numerous occasions with the most notable being a presentation in front of nearly 500 TIAA employees. Robert also had the pleasure of having a meet in greet with the Chief Information Officer and the Chief Risk Officer of TIAA in which they congratulated Robert on his achievement. 
+
+
+Work Paper Automation App:
+Robert built a Django application that automate portions of final audit reports, saving auditors an average of two hours per audit. The application works by extracting text from audit planning documents and pasting that text in the proper areas of the final audit report. The making of this app showcases Robert's expertise with Django, python, as well as working with text data. It also showcases Robert's ability to think outside of the box in order to come up with innovative solutions to real business problems.
+
+
+Weekly Status Tracker App:
+Robert build a Django application that allows auditors to log their progress on their projects. The application contains CRUD functionality (Create Read Update Delete) to allow auditors to create, read, update, and delete entries. All entries logged by auditors are saved to a MSSQL database. Robert used the backend data to then build a Tableau dashboard that management can access so they could understand how auditors were progressing on projects and how much bandwidth their team may have for a given week. The making of this app showcases Robert's expertise with Django, python, full stack development, and Tableau. 
+
+
+Diamond Award Winner:
+Robert was offered the "Diamond" award by his department in 2024. The diamond award is an award given out once or twice a year to high performing individuals who exhibit exceptional work and who go above and beyond the traditional responsibilities of their role. This award showcases Robert's work ethic and quality of work.
+
+
+High Performance Rating - 2024:
+Robert was rated as "Exceeds Expectations" as a part of his year end review for 2024. This rating exemplifies Robert's high quality of work.
+
+
+Selenium Bots:
+Robert has been able to leverage the selenium package in python to build various Bots that are able to automate repetitive tasks within Internal Audit. The most notable are his Audit Plan bot and his Regulation Scraping bot. The Audit Plan bot is a bot that takes information from the audit team and automatically enters the information into the front-end system that the department uses to track and store audit projects. This bot is able to save over 15 hours of manual work.
+The regulation scraping bot was a bot that scraped data from the Code of Financial Regulations website for the audit team and displayed the scraped data neatly into an excel document, saving the audit team around 9 hours of manual work.
+These bots showcase Robert's ability to learn new technologies and be able to leverage them to gain operational efficiency. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

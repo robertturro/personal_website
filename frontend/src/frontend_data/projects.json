@@ -30,12 +30,12 @@
   {
     "title": "Personal Website",
     "imageSrc": "projects/project.png",
-    "description": "My own personal website which I made using Django for the backend and React for the frontend. The website also includes an AI Assistant which I made by using Retrieval-Augmented Generation on various documents about me which are fed to an OpenAI API.",
+    "description": "My own personal website which I built using Django for the backend, React for the frontend, and deployed on an AWS server. The website also includes an AI Assistant which I made by using Retrieval-Augmented Generation on various documents about me which are fed to an OpenAI API.",
     "skills": [
       "React",
       "Django",
       "RAG",
-      "OpenAI API",
+      "AWS",
       "Generative AI",
       "APIs",
       "Frontend Development"
@@ -50,5 +50,19 @@
     "skills": ["Data Visualization", "Deep Learning", "Data Preprocessing"],
     "demo": "https://www.example.com",
     "source": "https://github.com/robertturro/Tabular-Playground-Series---May-2022"
+  },
+  {
+    "title": "NFL Big Data Bowl 2025",
+    "imageSrc": "projects/project.png",
+    "description": "Performed a Chi-Squared analysis on data consisting of around 16,000 NFL plays from the 2022 season to determine if a pre-snap receiver shift from a twins alignment to a trips alignment affects the probability of various post snap events from occurring.",
+    "skills": [
+      "Statistical Testing",
+      "Data Visualization",
+      "Data Engineering",
+      "Data Analytics",
+      "Chi-Squared"
+    ],
+    "demo": "https://www.example.com",
+    "source": "https://github.com/robertturro/NFL-Big-Data-Bowl---2025"
   }
 ]
