@@ -22,6 +22,7 @@ load_dotenv()
  
 #CHROMA_PATH = r"D:\personal_website\backend\chroma"
 #DATA_PATH = r"D:\personal_website\backend\data"
+##
 CHROMA_PATH = r"chroma"
 
 client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
