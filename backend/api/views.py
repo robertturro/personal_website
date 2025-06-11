@@ -36,7 +36,7 @@ class CreateQuestion(generics.ListCreateAPIView):
         q = Question(question=question, date=date.today(), answer=response)
         q.save()
 
-        return JsonResponse({'response': response})
+        return JsonResponse({'response': prompt})
         
 
 
