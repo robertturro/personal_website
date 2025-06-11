@@ -9,6 +9,7 @@ export const About = ({
   handleKeyDown,
   isLoading,
 }) => {
+  console.log(response);
   return (
     <section className={style.aboutcontainer} id="about">
       <h2 className={style.abouttitle}>About Me</h2>
