@@ -65,4 +65,6 @@ jobs:
               -e openai_api_key="${{ secrets.OPENAI_API_KEY }}" \
               -e assisstant_id="${{ secrets.ASSISSTANT_ID }}" \
               ${{ secrets.DOCKER_USERNAME }}/personal-website4:latest
+
+            docker exec personal-website4 python manage.py migrate --noinput
           EOF
