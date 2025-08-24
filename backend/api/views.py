@@ -11,7 +11,6 @@ from django.http import JsonResponse, HttpResponse, StreamingHttpResponse
 #from django.views.decorators.http import condition
 #from channels.layers import get_channel_layer
 #from asgiref.sync import async_to_sync
-# test 
 
 
 class CreateUserView(generics.CreateAPIView):
